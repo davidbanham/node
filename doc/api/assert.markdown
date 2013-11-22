@@ -82,3 +82,8 @@ Expects `block` not to throw an error, see assert.throws for details.
 
 Tests if value is not a false value, throws if it is a true value. Useful when
 testing the first argument, `error` in callbacks.
+
+## assert.errEqual(error1, error2)
+
+Tests shallow equality of two errors. Useful for checking the error you recieved
+is the one you expected.
