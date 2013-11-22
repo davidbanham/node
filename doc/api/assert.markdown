@@ -25,6 +25,14 @@ Tests shallow, coercive non-equality with the not equal comparison operator ( `!
 
 Tests for deep equality.
 
+It should be noted that this checks only enumerable properties, which the Error object has none of. This will not throw an error:
+
+    assert.deepEqual(new Error("foo"), new Error("bar"));
+
+If you wish to check the Error returned is the one you expected, a better method is:
+
+    assert.equal(err.message, "foo");
+
 ## assert.notDeepEqual(actual, expected, [message])
 
 Tests for any deep inequality.
